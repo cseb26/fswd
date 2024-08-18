@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html> 
+    <head> 
+        <title>  The reverse the number </title>
+    </head>
+    <body>
+        <script>
+            function reverse(){
+               var rev=0,n,r;
+               n = parseInt(prompt("enter a number"));
+                while(n!=0){
+                    r = n%10;
+                    rev = rev *10 + r;
+                    n =  parseInt( n /10);
+                }
+                document.write("the given no reverse is "+ rev);
+            }
+       </script>
+       <form align="center">
+        <input type="button" name="value" value="Click on it  to reverse " onclick="reverse();" >
+       </form>
+    </body>
+</html>

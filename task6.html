@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+<h1>student Information</h1>
+<div ng-app="myApp" ng-controller="formCtrl">
+  <form novalidate>
+    First Name:<br>
+    <input type="text" ng-model="student.firstName"><br>
+    Last Name:<br>
+    <input type="text" ng-model="student.lastName"><br>
+    DoB:<br>
+    <input type="date" id="dob" ng-model="student.DoB"><br>
+    Gender:<br>
+    <select id="gender" ng-model="student.gender">
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select><br>
+    Training Type:<br>
+    <label><input value="online" type="radio" name="training" ng-model="student.trainingType" />Online</label><br>
+    <label><input value="onsite" type="radio" name="training" ng-model="student.trainingType" />OnSite</label><br>
+    Subjects:<br>
+    <label><input type="checkbox" ng-model="student.maths" />Maths</label><br>
+ <label><input type="checkbox" ng-model="student.physics" />Physics</label><br>
+ <label><input type="checkbox" ng-model="student.chemistry"/>Chemistry</label><br>
+
+    <br><br>
+<button type="button" onclick="alert('student saved successfully')">SUBMIT</button>
+    <button ng-click="reset()">RESET</button>
+  </form>
+   
+  <p>form = {{student}}</p>
+  
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('formCtrl', function($scope) {
+    $scope.master = {};
+    $scope.reset = function() {
+        $scope.student = angular.copy($scope.master);
+    };
+    $scope.reset();
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+     <head>
+        <title>String functions </title>
+        <script type="text/javascript">
+            function str_vowel(){
+                var str = prompt("enter a string\n","");
+                let pos = 1;
+                for(var i=0;i<str.length;i++){
+                    if(str.charAt(i)=='a' || str.charAt(i)=='e' || str.charAt(i)=='i' || str.charAt(i)=='o' || str.charAt(i)=='u' || 
+                    str.charAt(i)=='A' || str.charAt(i)=='E' || str.charAt(i)=='I' || str.charAt(i)=='O' || str.charAt(i)=='U'){
+                        document.write("the entered string is "+str+ "<br/>");
+                        document.write(" the lest most vowel is "+ str.charAt(i)+ " <br/>");
+                        pos = pos + i;
+                        document.write(" the position of the left most vowel is"+ pos);
+                        exit;
+                    }
+                }
+                document.write(" the entered is string is "+ str+ "<br/>");
+                document.write("there is no vowel in the string ");
+            }
+        </script>
+     </head>
+     <body onload="str_vowel()">
+     </body>
+</html>
